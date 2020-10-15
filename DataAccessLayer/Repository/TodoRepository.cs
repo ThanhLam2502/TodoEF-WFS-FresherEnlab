@@ -12,7 +12,7 @@ namespace DataAccessLayer.Repository
         }
         public void AddTask(Todo task)
         {
-            Add(task);
+            Insert(task);
             TodoContext.SaveChanges();
         }
 
@@ -27,6 +27,11 @@ namespace DataAccessLayer.Repository
             // where p.ID == task.ID
             // select p).ToList()
             //            .ForEach(x => x.Status = task.Status);
+
+            //TodoContext.Todos.Attach(task);
+            //_context.Entry(task).Property(x => x.Status).IsModified = true;
+            //_context.SaveChanges();
+
             Update(task);
             TodoContext.SaveChanges();
         }
