@@ -46,6 +46,7 @@
             this.btnClose.TabIndex = 22;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnAdd
             // 
@@ -55,6 +56,7 @@
             this.btnAdd.TabIndex = 21;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lstClosed
             // 
@@ -64,6 +66,9 @@
             this.lstClosed.Name = "lstClosed";
             this.lstClosed.Size = new System.Drawing.Size(192, 329);
             this.lstClosed.TabIndex = 20;
+            this.lstClosed.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
+            this.lstClosed.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_DragEnter);
+            this.lstClosed.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
             // 
             // lstResolved
             // 
@@ -73,6 +78,9 @@
             this.lstResolved.Name = "lstResolved";
             this.lstResolved.Size = new System.Drawing.Size(192, 329);
             this.lstResolved.TabIndex = 19;
+            this.lstResolved.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
+            this.lstResolved.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_DragEnter);
+            this.lstResolved.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
             // 
             // lstBackLog
             // 
@@ -82,6 +90,9 @@
             this.lstBackLog.Name = "lstBackLog";
             this.lstBackLog.Size = new System.Drawing.Size(192, 329);
             this.lstBackLog.TabIndex = 18;
+            this.lstBackLog.DragDrop += new System.Windows.Forms.DragEventHandler(this.listBox_DragDrop);
+            this.lstBackLog.DragEnter += new System.Windows.Forms.DragEventHandler(this.listBox_DragEnter);
+            this.lstBackLog.MouseDown += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseDown);
             // 
             // Label3
             // 
