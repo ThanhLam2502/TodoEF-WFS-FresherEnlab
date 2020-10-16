@@ -24,7 +24,7 @@ namespace ToDoEF
         private void DisplayTaskByStatus(Status status, ListBox listBox)
         {
             listBox.DisplayMember = "Title";
-            listBox.DataSource = _service.GetTaskByStatus(status);
+            listBox.DataSource = _service.GetTodoByStatus(status);
         }
 
         private void btnClose_Click(object sender, System.EventArgs e)

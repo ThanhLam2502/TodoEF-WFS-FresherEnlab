@@ -25,7 +25,7 @@ namespace ToDoEF
             Todo task = GetTaskFromUI();
             if (_validate.IsValidTask(task))
             {
-                _todoService.AddTask(task);
+                _todoService.AddTodo(task);
                 Close();
             }
             else

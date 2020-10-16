@@ -1,4 +1,5 @@
-﻿using DataAccessLayer;
+﻿using System.Linq;
+using DataAccessLayer;
 using DataAccessLayer.Data;
 using DataAccessLayer.Entity;
 using System.Collections.Generic;
@@ -13,16 +14,21 @@ namespace BusinessLogicLayer
             _unitOfWork = new UnitOfWork(new TodoContext());
         }
 
-        public void AddTask(Todo task)
+        public void AddTodo(Todo task)
         {
-            _unitOfWork.TodoRepository.AddTask(task);
+            _unitOfWork.TodoRepository.AddTodo(task);
+            _unitOfWork.Complete();
         }
 
-        public List<Todo> GetTaskByStatus(Status status)
+        public void Dispose()
         {
-            return _unitOfWork.TodoRepository.GetTaskByStatus(status);
+            _unitOfWork.Dispose();
         }
 
+        public List<Todo> GetTodoByStatus(Status status)
+        {
+            return _unitOfWork.TodoRepository.GetTodoByStatus(status).ToList();
+        }
         public void SetStatusByLstName(Todo task, string name)
         {
             if (name.Equals("lstBackLog"))
@@ -35,6 +41,7 @@ namespace BusinessLogicLayer
                 task.Status = Status.Closed;
 
             _unitOfWork.TodoRepository.UpdateStatusByID(task);
+            _unitOfWork.Complete();
         }
     }
 }

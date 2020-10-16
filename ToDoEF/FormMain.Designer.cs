@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+            _service.Dispose();
             base.Dispose(disposing);
         }
 

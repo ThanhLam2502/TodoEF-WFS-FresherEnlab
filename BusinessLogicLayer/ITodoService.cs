@@ -6,8 +6,9 @@ namespace BusinessLogicLayer
 {
     public interface ITodoService
     {
-        List<Todo> GetTaskByStatus(Status status);
+        List<Todo> GetTodoByStatus(Status status);
         void SetStatusByLstName(Todo task, string name);
-        void AddTask(Todo task);
+        void AddTodo(Todo task);
+        void Dispose();
     }
 }

@@ -7,7 +7,7 @@ namespace DataAccessLayer.Data
     {
         public TodoContext() : base("name = TodosContextDB")
         {
-            Database.SetInitializer<TodoContext>(new DropCreateDatabaseIfModelChanges<TodoContext>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<TodoContext>());
         }
 
         public DbSet<Todo> Todos { get; set; }
